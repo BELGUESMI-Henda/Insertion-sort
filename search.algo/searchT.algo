@@ -1,0 +1,36 @@
+PROCEDURE sorting(tab[INTEGER],n: INTEGER)
+VAR
+    tab:array : ARRAY_OF INTEGER [length];
+    i:INTEGER;
+    j:INTEGER;
+    n:tab.length;
+
+BEGIN
+  i:=0;
+  j:=0;
+  tmp:=0;
+FOR i FROM 0 TO n-1 STEP step 1 DO
+   tmp=tab[i];
+   j=j-1;
+WHILE (j>=0 AND tab[j]>tmp) DO
+   tab[j+1]=tab[j];
+   j=j-1
+END_WHILE
+END_FOR  
+END
+
+
+ALGORITHM insertionSort
+VAR
+    tab:[INTEGER];
+    i:INTEGER;
+    lenghth: INTEGER;
+BEGIN
+  write("insert the length of array");
+  read(length);
+  FOR i FROM 0 TO length-1 STEP 1 DO
+    read(tab[i]);
+  END_FOR
+    sorting(tab,length);
+    write("array stored:",tab);
+END
